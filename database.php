@@ -3,7 +3,7 @@
 class Db {
     
     protected $con;
-    private $host = "eu-cdbr-azure-west-c.cloudapp.net"//"us-cdbr-azure-west-c.cloudapp.net";
+    private $host = "eu-cdbr-azure-west-c.cloudapp.net";
     private $user = "bbafb55bdffce4";
     private $pwd = "5a4ecc10";
     private $db = "TecLogLog";
