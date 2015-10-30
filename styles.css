@@ -89,3 +89,14 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid #EDE1B3;
     padding: 10px;
 }
+.error{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+.footernote{
+    color: blue;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}

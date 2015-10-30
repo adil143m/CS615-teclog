@@ -49,10 +49,10 @@ class Db {
         try {
             $sql = "CREATE TABLE IF NOT EXISTS admin (
                        admin_id INT(11) AUTO_INCREMENT,
-                       adminName VARCHAR(265) NOT NULL,
-                       username VARCHAR(265) NOT NULL,
-                       password VARCHAR(265) NOT NULL,
-                       salt VARCHAR(265) NOT NULL,
+                       adminName VARCHAR(265) NOT NULL,,
+                       username VARCHAR(265) NOT NULL,,
+                       password VARCHAR(265) NOT NULL,,
+                       salt VARCHAR(265) NOT NULL,,
                        PRIMARY KEY(admin_id)
                     );";
             $this->con->query($sql);

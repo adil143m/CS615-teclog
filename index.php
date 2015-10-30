@@ -16,38 +16,24 @@ if(isset($_COOKIE['ACTIVE_NOTE_ID'])) {
         $activeNoteId = $_COOKIE['ACTIVE_NOTE_ID'];
     }
 }
-
+//for navigate each nots from database
 if(isset($_REQUEST['action'])) {
     switch($_REQUEST['action']) {
-        case 'delete':
-            $db->deleteNote($activeNoteId);
-            $newId = $db->getMaxId();
-            setcookie("ACTIVE_NOTE_ID", $newId);
-            $activeNoteId = $newId;
-            break;
-        case 'update':
-            $db->updateNote($_COOKIE['ACTIVE_NOTE_ID'], $_REQUEST['content']);
-            break;
-        case 'new':
-            $db->createNote("New note.");
-            $newId = $db->getMaxId();
-            setcookie("ACTIVE_NOTE_ID", $newId);
-            $activeNoteId = $newId;
-            break;
+        
         case 'navigate':
             setcookie("ACTIVE_NOTE_ID", $_REQUEST['id']);
             $activeNoteId = $_REQUEST['id'];
             break;
     }
 }
-
+//
 $template = new Smarty();
 
 if(isset($activeNoteId))
-    $template->assign("ACTIVE_NOTE_ID", $activeNoteId);
+$template->assign("ACTIVE_NOTE_ID", $activeNoteId);
 $template->assign("notes", $db->getNotes());
 $template->display('index.tpl');
 
 //disconnect
-$db->disconnect();
+//$db->disconnect();
 ?>
